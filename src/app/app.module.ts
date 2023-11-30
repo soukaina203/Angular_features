@@ -34,6 +34,8 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { TranslationComponent } from './components/translation/translation.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { PrintComponent } from './components/print/print.component';
+import { NgxPrintModule } from 'ngx-print';
 
 export function HttpLoaderFactory(http:HttpClient){
  return new TranslateHttpLoader(http);
@@ -48,6 +50,7 @@ export function HttpLoaderFactory(http:HttpClient){
     CardComponent,
     NavigationComponent,
     TranslationComponent,
+    PrintComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +87,7 @@ export function HttpLoaderFactory(http:HttpClient){
     MatCheckboxModule,
     FormsModule,
     MatRadioModule,
+    NgxPrintModule
   ],
   providers: [{provide: FocusTrapFactory, useClass: ConfigurableFocusTrapFactory}],
   bootstrap: [AppComponent],
