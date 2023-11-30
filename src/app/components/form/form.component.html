@@ -1,0 +1,104 @@
+<div class="w-[100%] flex justify-center mt-3">
+
+<form>
+  <div class="flex flex-col w-[30rem]">
+
+        <mat-label for>Checkbox</mat-label>
+        <br>
+        <mat-checkbox
+            [checked]="isChecked"
+            (change)="click()"
+        >
+            show details
+        </mat-checkbox>
+<br>
+
+        <label id="example-radio-group-label">Pick your favorite season</label>
+        <br>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          name="favoriteSeason"
+          [(ngModel)]="favoriteSeason"
+        >
+          <mat-radio-button
+            class="example-radio-button"
+            *ngFor="let season of seasons"
+            (click)="choosenSeason(season)"
+            [value]="season"
+          >
+            {{ season }}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <div>Your favorite season is: {{ favoriteSeason }}</div>
+
+        <br>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <mat-label>Input</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Select</mat-label>
+          <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Textarea</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
+
+
+
+      <br>
+        <mat-form-field class="w-[100%]" >
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl"
+           [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com">
+            <ng-container *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            <mat-error>Please enter a valid email address</mat-error>
+          </ng-container>
+        </mat-form-field>
+        <ng-container *ngIf="emailFormControl.hasError('required') && emailFormControl.touched ">
+
+          <mat-hint class="text-red-500">Email is <strong>required</strong></mat-hint>
+
+        </ng-container>
+
+        <br>
+        <mat-form-field class="w-[100%]">
+          <mat-label>Favorite food</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi">
+        </mat-form-field>
+
+
+
+        <br>
+        <mat-form-field class="w-[100%]">
+          <mat-label>Leave a comment</mat-label>
+          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+        <br>
+
+        <mat-slider >
+          <input matSliderThumb >
+        </mat-slider>
+<br>
+<mat-slide-toggle>Slide me!</mat-slide-toggle>
+
+
+</form>
+</div>

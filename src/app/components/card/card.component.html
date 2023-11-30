@@ -1,0 +1,35 @@
+<mat-checkbox
+[checked]="isChecked"
+(change)="click()"
+>
+show details
+</mat-checkbox>
+<ng-container *ngIf="isChecked">
+<md-card>
+  <h1>Hello</h1>
+</md-card>
+</ng-container>
+
+<br>
+ <label id="example-radio-group-label">Pick your favorite season</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="favoriteSeason"
+>
+  <mat-radio-button
+    class="example-radio-button"
+    *ngFor="let season of seasons"
+    (click)="choosenSeason(season)"
+    [value]="season"
+  >
+    {{ season }}
+  </mat-radio-button>
+</mat-radio-group>
+
+<div>Your favorite season is: {{ favoriteSeason }}</div>
+
+
+============================== Auto complete =========================
+
+<app-autocomplete></app-autocomplete>

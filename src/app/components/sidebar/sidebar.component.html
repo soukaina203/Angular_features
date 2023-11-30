@@ -1,0 +1,15 @@
+<mat-sidenav-container class="h-screen">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="w-[20%] bg-slate-500">
+    <mat-list-item >
+      <mat-icon>settings</mat-icon>
+      <span> Soukaina Mourabit</span>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-icon (click)="toggle()" class="m-4 hover:cursor-pointer">settings </mat-icon>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
