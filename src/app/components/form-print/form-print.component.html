@@ -1,0 +1,34 @@
+<form [formGroup]="myForm" (submit)="handleSubmit()">
+
+  <input type="text" formControlName="Name" >
+  <input type="text" formControlName="Age" >
+  <button>Submit</button>
+</form>
+
+
+
+<div id="content" #content>
+  <table >
+    <tr>
+      <td>
+        Nom et Prenom
+      </td>
+      <td>
+        {{myForm.value.Name}}
+      </td>
+    </tr>
+    <tr>
+
+      <tr>
+        <td>
+          Nom et Prenom
+        </td>
+        <td>
+          {{myForm.value.Age}}
+        </td>
+      </tr>
+      <tr>
+      </table>
+
+</div>
+  <button (click)="generatePdf()" class="p-4"> Generate </button>

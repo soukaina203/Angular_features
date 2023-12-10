@@ -36,6 +36,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { PrintComponent } from './components/print/print.component';
 import { NgxPrintModule } from 'ngx-print';
+import { FormPrintComponent } from './components/form-print/form-print.component';
+import { MailingComponent } from './components/mailing/mailing.component';
 
 export function HttpLoaderFactory(http:HttpClient){
  return new TranslateHttpLoader(http);
@@ -51,6 +53,8 @@ export function HttpLoaderFactory(http:HttpClient){
     NavigationComponent,
     TranslationComponent,
     PrintComponent,
+    FormPrintComponent,
+    MailingComponent,
   ],
   imports: [
     BrowserModule,
